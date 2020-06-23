@@ -1,5 +1,9 @@
 package com.dsckiet.movietails.network
 
+import com.dsckiet.movietails.models.NowPlayingResponse
+import retrofit2.Response
+import retrofit2.http.GET
+
 interface TMDBApiService {
 /* TMDB APIs
      https://image.tmdb.org/t/p/original/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg
@@ -16,8 +20,8 @@ interface TMDBApiService {
         const val MOVIES_PER_PAGE = 20
     }
 
-//    @GET("movie/now_playing?api_key=${TMDB_API_KEY}")
-//    suspend fun getNowPlayingMovies(): Response<NowPlayingResponse>
+    @GET("movie/now_playing?api_key=${TMDB_API_KEY}")
+    suspend fun getNowPlayingMovies(): Response<NowPlayingResponse>
 
 //    @GET("movie/popular")
 //    fun getPopularMovies(@Query("page" ) page: Int): Response<>
