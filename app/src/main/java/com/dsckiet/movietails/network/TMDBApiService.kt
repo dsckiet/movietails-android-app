@@ -4,6 +4,10 @@ import com.dsckiet.movietails.models.NowPlayingResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
+/**
+ * Created By Anshul on 24-06-2020
+ */
+
 interface TMDBApiService {
 /* TMDB APIs
      https://image.tmdb.org/t/p/original/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg

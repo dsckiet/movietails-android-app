@@ -16,6 +16,10 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
+/**
+ * Created By Anshul on 24-06-2020
+ */
+
 @FlowPreview
 @ExperimentalCoroutinesApi
 val networkModule = module {

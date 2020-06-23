@@ -4,6 +4,10 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 
+/**
+ * Created By Anshul on 24-06-2020
+ */
+
 /* store the network state of the API calls */
 sealed class NetworkState<T> {
     class Loading<T> : NetworkState<T>()

@@ -4,6 +4,10 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * Created By Anshul on 24-06-2020
+ */
+
 @Parcelize
 data class NowPlayingResponse(
     @Json(name = "results")

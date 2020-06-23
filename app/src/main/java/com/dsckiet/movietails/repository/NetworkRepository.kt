@@ -6,6 +6,10 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
+/**
+ * Created By Anshul on 24-06-2020
+ */
+
 @ExperimentalCoroutinesApi
 abstract class NetworkRepository<T> {
 
