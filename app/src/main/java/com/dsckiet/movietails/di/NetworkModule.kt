@@ -2,6 +2,7 @@ package com.dsckiet.movietails.di
 
 import com.dsckiet.movietails.network.TMDBApiService
 import com.dsckiet.movietails.network.TMDBApiService.Companion.TMDB_BASE_URL
+import com.dsckiet.movietails.repository.MovieDataRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -23,5 +24,8 @@ val networkModule = module {
             )
             .build()
             .create(TMDBApiService::class.java)
+    }
+    single {
+        MovieDataRepository(get())
     }
 }
