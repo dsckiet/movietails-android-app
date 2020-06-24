@@ -10,7 +10,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.dsckiet.covid_tracker_android_app"
+        applicationId "com.dsckiet.movietails"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
