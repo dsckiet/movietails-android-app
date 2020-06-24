@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.dsckiet.movietails.ui.home.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_wallpapersFragment"
+            app:destination="@id/wallpapersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wallpapersFragment"
+        android:name="com.dsckiet.movietails.ui.wallpapers.fragment.WallpapersFragment"
+        android:label="WallpapersFragment"
+        tools:layout="@layout/fragment_wallpapers">
+        <action
+            android:id="@+id/action_wallpapersFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_wallpapersFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.dsckiet.movietails.ui.settings.fragment.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_wallpapersFragment"
+            app:destination="@id/wallpapersFragment" />
+    </fragment>
+</navigation>
