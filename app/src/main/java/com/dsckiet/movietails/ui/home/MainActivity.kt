@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.dsckiet.movietails.R
+import com.dsckiet.movietails.databinding.ActivityMainBinding
 import com.dsckiet.movietails.ui.home.viewModel.NowPlayingViewModel
 import com.dsckiet.movietails.utils.NetworkState
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,15 +26,15 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity() {
 
     private val nowPlayingVM: NowPlayingViewModel by viewModel()
+    private lateinit var binding :ActivityMainBinding
 
     @SuppressLint("LogNotTimber")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        text.setOnClickListener {
-            loadData()
-        }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+//        text.setOnClickListener {
+//            loadData()
+//        }
         nowPlayingVM.nowPlayingLiveData.observe(this, Observer { state->
             when(state){
                 is NetworkState.Loading -> Log.i("State","Loading")
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 is NetworkState.Success -> {
                     Log.i("State","Success")
                     val list = state.data.nowPlayingMoviesList
-                    text.text = list.toString()
+                    //text.text = list.toString()
                 }
             }
         })
