@@ -1,4 +1,4 @@
-package com.dsckiet.movietails.ui.home.fragments
+package com.dsckiet.movietails.ui.home.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
