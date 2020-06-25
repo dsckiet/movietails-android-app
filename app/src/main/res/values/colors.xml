@@ -7,4 +7,11 @@
 <!--    Bottom Navigation Color Resources-->
     <color name="inactiveState">#C6A1DA</color>
     <color name="activeState">#FFFFFF</color>
+<!--    Rating Bar Color-->
+    <color name="ratingStar">#FFE600</color>
+
+<!--    Details Page Colors-->
+    <color name="detailsSmallText">#7B7B7B</color>
+    <color name="detailsLargeText">#003C77</color>
+    <color name="slimLineColor">#C7C7C7</color>
 </resources>
