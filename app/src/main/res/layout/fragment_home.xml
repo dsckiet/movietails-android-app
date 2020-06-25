@@ -7,7 +7,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Layout for Home comes here"
+            android:text="Layout for Details comes here"
             android:layout_centerInParent="true"
             android:textSize="20sp"/>
     </RelativeLayout>
