@@ -1,25 +1,26 @@
 package com.dsckiet.movietails.ui.home
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.dsckiet.movietails.R
 import com.dsckiet.movietails.databinding.ActivityMainBinding
+import com.dsckiet.movietails.ui.home.fragment.HomeFragmentDirections
 import com.dsckiet.movietails.ui.home.viewModel.NowPlayingViewModel
+import com.dsckiet.movietails.ui.settings.fragment.SettingsFragmentDirections
+import com.dsckiet.movietails.ui.wallpapers.fragment.WallpapersFragmentDirections
 import com.dsckiet.movietails.utils.NetworkState
-import com.gauravk.bubblenavigation.BubbleNavigationLinearView
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
 import org.koin.android.viewmodel.ext.android.viewModel
-import java.util.*
+
 
 /**
  * Created By Anshul on 24-06-2020
@@ -31,18 +32,22 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private val nowPlayingVM: NowPlayingViewModel by viewModel()
+
     private lateinit var binding :ActivityMainBinding
-    private lateinit var bubbleNavigationLinearView: BubbleNavigationLinearView
     private lateinit var navController: NavController
-    private var customFragmentBackStack = Stack<Int>()
+    private var prevPosNav: Int = 0
+
 
     @SuppressLint("LogNotTimber")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.NavHostFragment)
-        customFragmentBackStack.push(0)
-        simulateBottomNavigation()
+
+        /* Bottom Navigation */
+        binding.bottomNav.setTypeface(Typeface.DEFAULT_BOLD)
+        initBottomNavigationView()
+
 //        text.setOnClickListener {
 //            loadData()
 //        }
@@ -67,69 +72,51 @@ class MainActivity : AppCompatActivity() {
         nowPlayingVM.getNowPlayingData()
     }
 
-    private fun simulateBottomNavigation(){
-        binding.bottomNav.setNavigationChangeListener{view, position ->
-            Log.i("backStackOutput", customFragmentBackStack.toString())
-            when(customFragmentBackStack.lastElement()){
-                0 -> {
-                    when (position) {
-                        1 -> {
-                            navController.navigate(R.id.action_homeFragment_to_wallpapersFragment)
-                            customFragmentBackStack.push(1)
+    private fun initBottomNavigationView(){
+        binding.bottomNav.setNavigationChangeListener { _, position ->
+            if(prevPosNav!=position) {
+                when (position) {
+                    0 -> {
+                        binding.bottomNav.setCurrentActiveItem(0)
+                        if(prevPosNav == 1){
+                            navController.navigate(WallpapersFragmentDirections.actionWallpapersFragmentToHomeFragment())
+                        }else{
+                            navController.navigate(SettingsFragmentDirections.actionSettingsFragmentToHomeFragment())
                         }
-                        2 -> {
-                            navController.navigate(R.id.action_homeFragment_to_settingsFragment)
-                            customFragmentBackStack.push(2)
-                        }
+                        prevPosNav = position
                     }
-                }
-                1 -> {
-                    when (position) {
-                        0 -> {
-                            navController.navigate(R.id.action_wallpapersFragment_to_homeFragment)
-                            customFragmentBackStack.push(0)
+                    1 -> {
+                        binding.bottomNav.setCurrentActiveItem(1)
+                        if(prevPosNav == 0){
+                            navController.navigate(HomeFragmentDirections.actionHomeFragmentToWallpapersFragment())
+                        }else{
+                            navController.navigate(SettingsFragmentDirections.actionSettingsFragmentToWallpapersFragment())
                         }
-                        2 -> {
-                            navController.navigate(R.id.action_wallpapersFragment_to_settingsFragment)
-                            customFragmentBackStack.push(2)
-                        }
+                        prevPosNav = position
                     }
-                }
-                2 -> {
-                    when (position) {
-                        0 -> {
-                            navController.navigate(R.id.action_settingsFragment_to_homeFragment)
-                            customFragmentBackStack.push(0)
+                    2 -> {
+                        binding.bottomNav.setCurrentActiveItem(2)
+                        if(prevPosNav == 0){
+                            navController.navigate(HomeFragmentDirections.actionHomeFragmentToSettingsFragment())
+                        }else{
+                            navController.navigate(WallpapersFragmentDirections.actionWallpapersFragmentToSettingsFragment())
                         }
-                        1 -> {
-                            navController.navigate(R.id.action_settingsFragment_to_wallpapersFragment)
-                            customFragmentBackStack.push(1)
-                        }
+                        prevPosNav = position
                     }
                 }
             }
         }
     }
 
-    /*       APP CRASHES ON BACK PRESS NAVIGATION DUE TO BUG IN THE onBackPressed()     */
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        when(customFragmentBackStack.lastElement()){
-//            0 -> System.exit(0)
-//            1 -> {
-//                customFragmentBackStack.remove(customFragmentBackStack.lastElement())
-//                when(customFragmentBackStack.lastElement()){
-//                    0 -> navController.navigate(R.id.action_wallpapersFragment_to_homeFragment)
-//                    2 -> navController.navigate(R.id.action_wallpapersFragment_to_settingsFragment)
-//                }
-//            }
-//            2 -> {
-//                customFragmentBackStack.pop()
-//                when(customFragmentBackStack.lastElement()){
-//                    0 -> navController.navigate(R.id.action_settingsFragment_to_homeFragment)
-//                    1 -> navController.navigate(R.id.action_settingsFragment_to_wallpapersFragment)
-//                }
-//            }
-//        }
-//    }
+    override fun onBackPressed() {
+        if(prevPosNav!=0){
+            binding.bottomNav.setCurrentActiveItem(0)
+            prevPosNav = 0
+            navController.popBackStack(R.id.homeFragment,false)
+        }else{
+            //TODO:: Show a snack bar for back press again
+            finish()
+        }
+    }
+
 }
