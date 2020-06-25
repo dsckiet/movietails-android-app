@@ -14,7 +14,7 @@
     <string name="country">Country</string>
     <string name="year">Year</string>
     <string name="movie_img">movie_img</string>
-    <string name="details_movie_title"><![CDATA[Harry Potter & the Philosopher\'s Stone]]></string>
+    <string name="details_movie_title">Harry Potter &amp; the Philosophers Stone</string>
     <string name="app_background">app background</string>
     <string name="hi_what_s_next">Hi, what\'s next ?</string>
     <string name="discover">Discover</string>
