@@ -8,11 +8,20 @@
     <string name="movie_ov_text">After Voldemort takes over the Ministry of Magic,
         Harry, Ron and Hermione are forced into hiding.
         They try to decipher the clues left to them by
-        Dumbledore to find and destroy Voldemort's Horcruxes.</string>
+        Dumbledore to find and destroy Voldemorts Horcruxes.</string>
     <string name="est">Explore Similar Titles</string>
     <string name="duration">Duration</string>
     <string name="country">Country</string>
     <string name="year">Year</string>
     <string name="movie_img">movie_img</string>
     <string name="details_movie_title"><![CDATA[Harry Potter & the Philosopher\'s Stone]]></string>
+    <string name="app_background">app background</string>
+    <string name="hi_what_s_next">Hi, what\'s next ?</string>
+    <string name="discover">Discover</string>
+    <string name="top_trending">Top Trending</string>
+    <string name="small_list_movie_img">small list movie img</string>
+    <string name="sl_movie_title">The Conjuring 2</string>
+    <string name="sl_movie_title_1">Harry Potter &amp; the Prisoner of Azkaban</string>
+    <string name="top_rated_movies">top rated movies</string>
+    <string name="upcoming_movies">upcoming movies</string>
 </resources>
