@@ -1,4 +1,4 @@
-package com.dsckiet.movietails.ui.home
+package com.dsckiet.movietails.ui
 
 import android.annotation.SuppressLint
 import android.graphics.Typeface
