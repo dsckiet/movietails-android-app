@@ -1,4 +1,4 @@
-package com.dsckiet.movietails.adapter
+package com.dsckiet.movietails.ui.home.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -13,12 +13,13 @@ import com.dsckiet.movietails.R
 import com.dsckiet.movietails.repository.dataclass.DetailsListData
 import kotlinx.android.synthetic.main.details_list_item.view.*
 
-class ESTListAdapter(c: Context, private val listItem: List<DetailsListData>):
-    RecyclerView.Adapter<ESTListAdapter.ViewHolder>() {
-    private val context : Context = c
+class TRListAdapter(c: Context, private val listItem: List<DetailsListData>) :
+    RecyclerView.Adapter<TRListAdapter.ViewHolder>() {
+    private val context: Context = c
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.details_list_item, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.details_list_item, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -32,7 +33,7 @@ class ESTListAdapter(c: Context, private val listItem: List<DetailsListData>):
 
     override fun getItemCount(): Int = listItem.size
 
-    class ViewHolder(unitView: View): RecyclerView.ViewHolder(unitView){
+    class ViewHolder(unitView: View) : RecyclerView.ViewHolder(unitView) {
         val imgSource: ImageView = unitView.details_list_img
         val title: TextView = unitView.details_list_title
         val rating: RatingBar = unitView.details_list_ratingBar

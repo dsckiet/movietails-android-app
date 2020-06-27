@@ -24,4 +24,5 @@
     <string name="sl_movie_title_1">Harry Potter &amp; the Prisoner of Azkaban</string>
     <string name="top_rated_movies">top rated movies</string>
     <string name="upcoming_movies">upcoming movies</string>
+    <string name="now_playing">Now Playing</string>
 </resources>

@@ -3,6 +3,7 @@ package com.dsckiet.movietails.network
 import com.dsckiet.movietails.models.NowPlayingResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 /**
  * Created By Anshul on 24-06-2020
@@ -29,7 +30,7 @@ interface TMDBApiService {
 
 //    @GET("movie/popular")
 //    fun getPopularMovies(@Query("page" ) page: Int): Response<>
-
+//
 //    @GET("movie/{movie_id}")
 //    fun getMovieDetails(@Path("movie_id") id: Int): Response<>
 //

@@ -53,33 +53,36 @@
                 android:layout_marginTop="190dp"
                 android:orientation="vertical">
 
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:fontFamily="@font/roboto_medium"-->
+                <!--                    android:paddingStart="32dp"-->
+                <!--                    android:paddingLeft="32dp"-->
+                <!--                    android:paddingTop="32dp"-->
+                <!--                    android:paddingRight="32dp"-->
+                <!--                    android:paddingBottom="4dp"-->
+                <!--                    android:text="@string/discover"-->
+                <!--                    android:textColor="@color/detailsLargeText"-->
+                <!--                    android:textSize="24sp" />-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="230dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/discover" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:paddingStart="32dp"
                     android:paddingLeft="32dp"
-                    android:paddingTop="32dp"
-                    android:paddingRight="32dp"
-                    android:paddingBottom="4dp"
-                    android:text="@string/discover"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/now_playing"
                     android:textColor="@color/detailsLargeText"
                     android:textSize="24sp" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginRight="36dp"
-                    android:padding="8dp"
-                    android:layout_gravity="center_horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/img_na"
-                        android:contentDescription="@string/upcoming_movies" />
-                </androidx.cardview.widget.CardView>
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
@@ -246,8 +249,8 @@
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:layout_marginBottom="8dp">
+                    android:layout_marginBottom="8dp"
+                    android:padding="8dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -262,8 +265,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/img_na"
-                                android:contentDescription="@string/top_rated_movies" />
+                                android:contentDescription="@string/top_rated_movies"
+                                android:src="@drawable/img_na" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
@@ -274,8 +277,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/img_na"
-                                android:contentDescription="@string/upcoming_movies" />
+                                android:contentDescription="@string/upcoming_movies"
+                                android:src="@drawable/img_na" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </HorizontalScrollView>
