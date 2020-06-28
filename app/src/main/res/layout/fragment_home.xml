@@ -45,6 +45,7 @@
                     android:textSize="32sp" />
 
                 <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="30sp"
@@ -70,6 +71,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/card_discover"
                         android:layout_width="wrap_content"
                         android:layout_height="230dp"
                         android:layout_marginTop="16dp"
@@ -99,6 +101,7 @@
                             android:orientation="horizontal">
 
                             <LinearLayout
+                                android:id="@+id/np_item1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
@@ -131,6 +134,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/np_item2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
@@ -163,6 +167,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/np_item3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
@@ -195,6 +200,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/np_item4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
@@ -262,6 +268,7 @@
                             android:orientation="horizontal">
 
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/card_top_rated"
                                 android:layout_width="320dp"
                                 android:layout_height="200dp"
                                 android:padding="4dp">
@@ -274,6 +281,7 @@
                             </androidx.cardview.widget.CardView>
 
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/card_upcoming"
                                 android:layout_width="320dp"
                                 android:layout_height="200dp"
                                 android:padding="4dp">

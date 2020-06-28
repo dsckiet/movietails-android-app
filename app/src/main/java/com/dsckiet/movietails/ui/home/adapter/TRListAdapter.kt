@@ -13,9 +13,9 @@ import com.dsckiet.movietails.R
 import com.dsckiet.movietails.repository.dataclass.DetailsListData
 import kotlinx.android.synthetic.main.details_list_item.view.*
 
-class TRListAdapter(c: Context, private val listItem: List<DetailsListData>) :
+class TRListAdapter(ctx: Context, private val listItem: List<DetailsListData>) :
     RecyclerView.Adapter<TRListAdapter.ViewHolder>() {
-    private val context: Context = c
+    private val context: Context = ctx
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =

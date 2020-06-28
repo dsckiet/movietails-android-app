@@ -13,12 +13,13 @@ import com.dsckiet.movietails.R
 import com.dsckiet.movietails.repository.dataclass.DetailsListData
 import kotlinx.android.synthetic.main.details_list_item.view.*
 
-class ESTListAdapter(c: Context, private val listItem: List<DetailsListData>):
+class ESTListAdapter(ctx: Context, private val listItem: List<DetailsListData>) :
     RecyclerView.Adapter<ESTListAdapter.ViewHolder>() {
-    private val context : Context = c
+    private val context: Context = ctx
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.details_list_item, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.details_list_item, parent, false)
         return ViewHolder(itemView)
     }
 
