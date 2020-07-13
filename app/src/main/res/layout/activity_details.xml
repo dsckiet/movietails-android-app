@@ -184,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                tools:listitem="@layout/details_list_item" />
+                tools:listitem="@layout/item_home_top_trending" />
         </LinearLayout>
     </ScrollView>
 </layout>
