@@ -25,4 +25,8 @@
     <string name="top_rated_movies">top rated movies</string>
     <string name="upcoming_movies">upcoming movies</string>
     <string name="now_playing">Now Playing</string>
+    <string name="list_text_here">List Text Here</string>
+    <string name="movie_title_here">Harry Potter &amp; the Deathly Hallows Part - II</string>
+    <string name="image">image</string>
+    <string name="app_preferences">App Preferences</string>
 </resources>

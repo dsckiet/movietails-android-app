@@ -23,7 +23,6 @@ import kotlinx.coroutines.launch
 class NowPlayingViewModel(private val repository: MovieDataRepository): ViewModel() {
 
     private val _nowPlayingLiveData = MutableLiveData<NetworkState<NowPlayingResponse>>()
-
     val nowPlayingLiveData : LiveData<NetworkState<NowPlayingResponse>> = _nowPlayingLiveData
 
     fun getNowPlayingData() {
