@@ -18,4 +18,9 @@
         <item name="android:textSize">1sp</item>
     </style>
 
+    <style name="CollapsedToolbarTextStyle">
+        <item name="android:textColor">@color/detailsLargeText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

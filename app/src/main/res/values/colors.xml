@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#F4FF90</color>
+    <color name="colorPrimaryDark">#00C4E4</color>
     <color name="colorAccent">#03DAC5</color>
 
-<!--    Bottom Navigation Color Resources-->
+    <!--    Bottom Navigation Color Resources-->
     <color name="inactiveState">#C6A1DA</color>
     <color name="activeState">#FFFFFF</color>
-<!--    Rating Bar Color-->
+    <!--    Rating Bar Color-->
     <color name="ratingStar">#FFE600</color>
 
-<!--    Details Page Colors-->
+    <!--    Details Page Colors-->
     <color name="detailsSmallText">#7B7B7B</color>
     <color name="detailsLargeText">#003C77</color>
     <color name="slimLineColor">#C7C7C7</color>

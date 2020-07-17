@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
-                    app:contentScrim="@color/colorPrimary"
+                    app:collapsedTitleTextAppearance="@style/CollapsedToolbarTextStyle"
                     app:expandedTitleTextAppearance="@style/ExpandedToolbarTextStyle"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed"
                     app:title="Movie Details"
@@ -35,8 +35,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="240dp"
-                        app:cardMaxElevation="8dp"
-                        app:layout_collapseMode="parallax">
+                        app:cardMaxElevation="8dp">
 
                         <TextView
                             android:layout_width="match_parent"
